@@ -1,2 +1,2 @@
 # Optimization-of-a-metal-gantry
-Projeto em ANSYS no âmbito da UC de Tópicos em Engenharia Computacional I
+ANSYS project within the scope of the UC Topics in Computational Engineering I
