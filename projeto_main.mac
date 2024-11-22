@@ -61,3 +61,19 @@ projeto_canto,zf,h2,h1,b,L,tf
 
 allsel
 nummrg,ALL,,,,
+
+! border condition
+
+ksel,s,loc,z,0
+DK,ALL, , , ,0,ALL, , , , , ,  
+
+allsel
+
+ESIZE,meshsize,0,   !definimos o tamanho máximo dos elementos, neste caso podemos utilizar a variável meshsize, que deverá ser definida no ponto 2
+MSHKEY,1            !indicamos que queremos uma malha regular
+!*
+!   5.1 Como podemos ter espessuras diferentes nos banzos e alma, utilizar o comando SECNUM para cada ID da secção definida em 4.1
+!*
+allsel       !ativar secção 1, todos os comandos de "malhar" ficam associados com este ID de sectype que foram definidos em #4.1
+!*
+amesh,all  
