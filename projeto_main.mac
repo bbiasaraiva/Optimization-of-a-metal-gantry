@@ -1,0 +1,63 @@
+/CLEAR
+
+!   1. Definição do nome do ficheiro e do título do problema
+/filname, ex5
+/title, EX5
+
+
+!   2. Definição das variáveis
+meshsize=0.05      !ex. definição do tamanho da malha (será utilizada no ponto #5)
+b=0.1  !largura do banso
+tf=0.03  !espessura do banso
+tw=0.017  !espessura da alma
+L=10
+zi=0
+zf=3
+x0=0
+xf=20
+h=0.6
+h1=0.6*h-(2*tf)!largura da alma 1 
+h2=0.3*h1 !largura da alma 2
+F1=10
+F2=100
+densidade=7850
+
+
+
+
+
+
+/PREP7
+*get,tcpubefore,active,,time,CPU !para calcular o tempo da solução
+!*
+/VUP,1,Z        !alterar a vista, considerar Z para cima
+!*  
+ET,1,SHELL181       !definição do elemento finito de casca shell 181
+
+/vup, 1, Z
+
+! 3. definção das propriedades materiais
+mptemp, 1
+mpdata, EX, 1, , 210000000
+mpdata, PRXY, 1, , 0.3
+
+!   4. Definição da geometria
+!   4.1 Para definir a secção (na realidade é a espessura das chapas) vamos utilizar o comando SECTYPE e SECDATA
+!*
+!secções, neste caso a espessura das chapas
+SECTYPE,1,SHELL,,tf
+SECDATA,tf,1,,
+
+SECTYPE ,2,SHELL,,tw
+SECDATA,tw,1,,
+
+projeto_pilar,h2,tf,b,h1,zi,zf,x0
+projeto_pilar,h2,tf,b,h1,zi,zf,L
+projeto_viga,L,h1,h2,b,zf,L-(h1/2)-tf/2
+projeto_viga,L,h1,h2,b,zf,x0+h1/2+tf/2
+
+projeto_canto,zf,h2,h1,b,x0,tf
+projeto_canto,zf,h2,h1,b,L,tf
+
+allsel
+nummrg,ALL,,,,
