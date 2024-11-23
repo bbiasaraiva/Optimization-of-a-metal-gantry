@@ -61,14 +61,6 @@ projeto_canto,zf,h2,h1,b,L,tf
 
 allsel
 nummrg,ALL,,,,
-
-! border condition
-
-ksel,s,loc,z,0
-DK,ALL, , , ,0,ALL, , , , , ,  
-
-allsel
-
 ESIZE,meshsize,0,   !definimos o tamanho máximo dos elementos, neste caso podemos utilizar a variável meshsize, que deverá ser definida no ponto 2
 MSHKEY,1            !indicamos que queremos uma malha regular
 !*
@@ -77,3 +69,19 @@ MSHKEY,1            !indicamos que queremos uma malha regular
 allsel       !ativar secção 1, todos os comandos de "malhar" ficam associados com este ID de sectype que foram definidos em #4.1
 !*
 amesh,all  
+
+!bases fixas
+ksel,s,loc,z,0
+DK,ALL, , , ,0,ALL, , , , , , 
+
+allsel
+!-20kN FZ a dividir pelos 12 kp dos cantos que vao levar com a carga
+KSEL,s,loc,z,zf+h2
+FK,ALL,FZ,-20/12
+
+allsel
+! -100kN FZ a dividir pelos 3 kp dos meio vao da viga que vao levar com a carga
+KSEL,s,loc,z,zf+h1
+FK,ALL,FZ,-100/3
+
+allsel
