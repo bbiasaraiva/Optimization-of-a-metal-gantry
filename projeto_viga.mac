@@ -35,3 +35,13 @@ a,global_kp_num+5,global_kp_num+6,global_kp_num+13,global_kp_num+12
 a,global_kp_num+6,global_kp_num+7,global_kp_num+14,global_kp_num+13
 a,global_kp_num+2,global_kp_num+4,global_kp_num+11,global_kp_num+9
 a,global_kp_num+4,global_kp_num+6,global_kp_num+13,global_kp_num+11
+
+! cálculo do volume
+
+a_viga=((h1-h2)**2+(L/2)**2)**0.5
+v_banzos=2*(a_viga*b)*tf
+
+! volume alma
+v_alma=((h1+h2)*(L/2)/2)*tw
+
+vT_vigas=2*(v_banzos+v_alma)
