@@ -1,5 +1,5 @@
 zf=arg1
-h=arg2
+h2=arg2
 h1=arg3
 b=arg4
 x=arg5
@@ -10,22 +10,22 @@ tf=arg6
 K,global_kp_num+1,x+(h1/2)+(tf/2),b/2,zf
 K,global_kp_num+2,x+(h1/2)+(tf/2),0,zf
 K,global_kp_num+3,x+(h1/2)+(tf/2),-b/2,zf
-K,global_kp_num+4,x+(h1/2)+(tf/2),b/2,zf+(h/2)
-K,global_kp_num+5,x+(h1/2)+(tf/2),0,zf+(h/2)
-K,global_kp_num+6,x+(h1/2)+(tf/2),-b/2,zf+(h/2)
-K,global_kp_num+7,x+(h1/2)+(tf/2),b/2,zf+h
-K,global_kp_num+8,x+(h1/2)+(tf/2),0,zf+h
-K,global_kp_num+9,x+(h1/2)+(tf/2),-b/2,zf+h
+K,global_kp_num+4,x+(h1/2)+(tf/2),b/2,zf+(h2/2)
+K,global_kp_num+5,x+(h1/2)+(tf/2),0,zf+(h2/2)
+K,global_kp_num+6,x+(h1/2)+(tf/2),-b/2,zf+(h2/2)
+K,global_kp_num+7,x+(h1/2)+(tf/2),b/2,zf+h2
+K,global_kp_num+8,x+(h1/2)+(tf/2),0,zf+h2
+K,global_kp_num+9,x+(h1/2)+(tf/2),-b/2,zf+h2
 
 K,global_kp_num+10,x-(h1/2)-(tf/2),b/2,zf
 K,global_kp_num+11,x-(h1/2)-(tf/2),0,zf
 K,global_kp_num+12,x-(h1/2)-(tf/2),-b/2,zf
-K,global_kp_num+13,x-(h1/2)-(tf/2),b/2,zf+(h/2)
-K,global_kp_num+14,x-(h1/2)-(tf/2),0,zf+(h/2)
-K,global_kp_num+15,x-(h1/2)-(tf/2),-b/2,zf+(h/2)
-K,global_kp_num+16,x-(h1/2)-(tf/2),b/2,zf+h
-K,global_kp_num+17,x-(h1/2)-(tf/2),0,zf+h
-K,global_kp_num+18,x-(h1/2)-(tf/2),-b/2,zf+h
+K,global_kp_num+13,x-(h1/2)-(tf/2),b/2,zf+(h2/2)
+K,global_kp_num+14,x-(h1/2)-(tf/2),0,zf+(h2/2)
+K,global_kp_num+15,x-(h1/2)-(tf/2),-b/2,zf+(h2/2)
+K,global_kp_num+16,x-(h1/2)-(tf/2),b/2,zf+h2
+K,global_kp_num+17,x-(h1/2)-(tf/2),0,zf+h2
+K,global_kp_num+18,x-(h1/2)-(tf/2),-b/2,zf+h2
 
 
 
@@ -50,3 +50,14 @@ a,global_kp_num+1,global_kp_num+2,global_kp_num+11,global_kp_num+10
 a,global_kp_num+2,global_kp_num+3,global_kp_num+12,global_kp_num+11
 a,global_kp_num+9,global_kp_num+8,global_kp_num+17,global_kp_num+18
 a,global_kp_num+8,global_kp_num+7,global_kp_num+16,global_kp_num+17
+
+
+! Cálculo do Volume
+
+v_lados=2*b*h2*tf
+
+v_banzos=2*b*(h1+(2*tf))*tf
+
+v_alma=(h1+(2*tf))*(h2+(2*tf))*tw
+
+vT_cantos=v_lados+v_banzos+v_alma
